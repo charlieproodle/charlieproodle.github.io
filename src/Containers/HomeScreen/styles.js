@@ -38,13 +38,13 @@ const styles = {
     alignItems: "center"
   },
   detailText: {
-    fontFamily: "Roboto",
+    fontFamily: "Monaco",
     paddingLeft: "10px"
   },
   profilePicture: {
     borderRadius: "50%",
     marginRight: "10px",
-    border: "solid 5px green"
+    opacity: "0.75"
   },
   projectContainer: {
     position: "relative",
@@ -83,6 +83,11 @@ const styles = {
   },
   subtext: {
     fontSize: "12px"
+  },
+  footer: {
+    marginTop: "20%",
+    backgroundColor: "lightgray",
+    height: "100px"
   }
 };
 
