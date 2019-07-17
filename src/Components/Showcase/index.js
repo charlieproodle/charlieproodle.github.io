@@ -14,7 +14,7 @@ const Showcase = props => {
       <div className={classes.text}>{text}</div>
       <div className={classes.stack}>{stack}</div>
       <div className={classes.link} onClick={() => window.location = link}>
-          See project <IoIosRocket style={{color: color, marginLeft: "5%"}}/>
+          See project <IoIosRocket style={{color: color, marginLeft: "5%", fontSize:20}}/>
         </div>
     </div>
   );

@@ -8,18 +8,23 @@ import {
   DiReact,
   DiGithubBadge,
   DiAndroid,
-  DiPython,
-  DiGoogleCloudPlatform,
   DiJavascript1,
-  DiJavascript,
-  DiCode
+  DiCode,
 } from "react-icons/di";
+
+import mnist_icon from "../../Images/mnist_2.png";
+import python_icon from "../../Images/python.png"
+import tensorflow_icon from "../../Images/tensorflow.png";
+import keras_icon from "../../Images/keras.png";
+import proodle_icon from "../../Images/proodle.png";
+import redux_icon from "../../Images/redux.png";
 
 const ProodleStack = props => {
   const { classes } = props;
   return (
     <div>
       <DiReact className={classes.devicon + " " + classes.reactIcon} />
+      <img src={redux_icon} className={classes.devicon} alt={"Not found :("}/>
       <DiGithubBadge className={classes.devicon} />
       <DiAndroid className={classes.devicon + " " + classes.androidIcon} />
     </div>
@@ -30,8 +35,9 @@ const ResearchStack = props => {
   const { classes } = props;
   return (
     <div>
-      <DiPython className={classes.devicon} />
-      <DiGoogleCloudPlatform className={classes.devicon} />
+      <img src={python_icon} className={classes.devicon} alt={"Not found :("}/>
+      <img src={tensorflow_icon} className={classes.devicon} alt={"Not found :("}/>
+      <img src={keras_icon} className={classes.devicon} alt={"Not found :("}/>
     </div>
   );
 };
@@ -41,8 +47,7 @@ const PersonalProject = props => {
   return (
     <div>
       <DiReact className={classes.devicon + " " + classes.reactIcon} />
-      <DiPython className={classes.devicon} />
-      <DiJavascript className={classes.devicon + " " + classes.jsIcon} />
+      <img src={python_icon} className={classes.devicon} alt={"Not found :("}/>
       <DiJavascript1 className={classes.devicon + " " + classes.jsIcon} />
     </div>
   );
@@ -88,18 +93,14 @@ class HomeScreen extends Component {
             <h2 className={classes.subtitle}>Current Projects</h2>
             <div className={classes.projects}>
               <Showcase
-                icon={
-                  "https://blogs.nottingham.ac.uk/ingenuitylab/files/2017/10/Logo-with-white-background.png"
-                }
+                icon={proodle_icon}
                 text={proodle}
                 stack={<ProodleStack classes={classes} />}
-                link={"https://proodlesolutions.com/"}
+                link={"https://www.nottingham.ac.uk/research/research-areas/energy-technologies/business-support/case-studies/proodle/proodle-solutions.aspx"}
                 color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
               />
               <Showcase
-                icon={
-                  "https://github.com/charlieproodle/SimpleGAN/raw/master/MNIST_GAN/images/generated_plot_e090.png"
-                }
+                icon={mnist_icon}
                 text={gan_project}
                 stack={<ResearchStack classes={classes} />}
                 link={
