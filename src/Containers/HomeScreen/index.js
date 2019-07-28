@@ -2,29 +2,36 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles";
 import Showcase from "../../Components/Showcase";
-import { proodle, gan_project, signup_project } from "../../Text/info";
+import {
+  proodle,
+  gan_project,
+  signup_project,
+  buggy_project,
+} from "../../Text/info";
 import { IoLogoLinkedin } from "react-icons/io";
 import {
   DiReact,
   DiGithubBadge,
   DiAndroid,
   DiJavascript1,
-  DiCode,
 } from "react-icons/di";
 
 import mnist_icon from "../../Images/mnist_2.png";
-import python_icon from "../../Images/python.png"
+import python_icon from "../../Images/python.png";
 import tensorflow_icon from "../../Images/tensorflow.png";
 import keras_icon from "../../Images/keras.png";
 import proodle_icon from "../../Images/proodle.png";
 import redux_icon from "../../Images/redux.png";
+import buggy_icon from "../../Images/buggy.png";
+import rasp_icon from "../../Images/rasp.png";
+import opencv_icon from "../../Images/opencv.png";
 
 const ProodleStack = props => {
   const { classes } = props;
   return (
     <div>
       <DiReact className={classes.devicon + " " + classes.reactIcon} />
-      <img src={redux_icon} className={classes.devicon} alt={"Not found :("}/>
+      <img src={redux_icon} className={classes.devicon} alt={"Not found :("} />
       <DiGithubBadge className={classes.devicon} />
       <DiAndroid className={classes.devicon + " " + classes.androidIcon} />
     </div>
@@ -35,9 +42,13 @@ const ResearchStack = props => {
   const { classes } = props;
   return (
     <div>
-      <img src={python_icon} className={classes.devicon} alt={"Not found :("}/>
-      <img src={tensorflow_icon} className={classes.devicon} alt={"Not found :("}/>
-      <img src={keras_icon} className={classes.devicon} alt={"Not found :("}/>
+      <img src={python_icon} className={classes.devicon} alt={"Not found :("} />
+      <img
+        src={tensorflow_icon}
+        className={classes.devicon}
+        alt={"Not found :("}
+      />
+      <img src={keras_icon} className={classes.devicon} alt={"Not found :("} />
     </div>
   );
 };
@@ -47,8 +58,26 @@ const PersonalProject = props => {
   return (
     <div>
       <DiReact className={classes.devicon + " " + classes.reactIcon} />
-      <img src={python_icon} className={classes.devicon} alt={"Not found :("}/>
+      <img src={python_icon} className={classes.devicon} alt={"Not found :("} />
       <DiJavascript1 className={classes.devicon + " " + classes.jsIcon} />
+    </div>
+  );
+};
+
+const BuggyProject = props => {
+  const { classes } = props;
+  return (
+    <div>
+      <img
+        src={rasp_icon}
+        className={classes.devicon + " " + classes.imgIcon}
+        alt={"Not found :("}
+      />
+      <img
+        src={opencv_icon}
+        className={classes.devicon + " " + classes.imgIcon}
+        alt={"Not found :("}
+      />
     </div>
   );
 };
@@ -59,7 +88,7 @@ class HomeScreen extends Component {
     return (
       <>
         <div className={classes.mainContainer}>
-          <DiCode className={classes.backgroundIcon2} />
+          {/* <DiCode className={classes.backgroundIcon2} /> */}
           <div className={classes.header}>
             <div className={classes.detail}>
               <img
@@ -76,6 +105,7 @@ class HomeScreen extends Component {
                     Postgraduate Computer Science Student
                   </p>
                   <p className={classes.subtext}>University of Nottingham</p>
+                  <p className={classes.subtext}>charliemday31@gmail.com</p>
                 </div>
                 <div
                   className={classes.linkedin}
@@ -88,6 +118,7 @@ class HomeScreen extends Component {
                 </div>
               </div>
             </div>
+            <div className={classes.seperator} />
           </div>
           <div className={classes.projectContainer}>
             <h2 className={classes.subtitle}>Current Projects</h2>
@@ -96,7 +127,9 @@ class HomeScreen extends Component {
                 icon={proodle_icon}
                 text={proodle}
                 stack={<ProodleStack classes={classes} />}
-                link={"https://www.nottingham.ac.uk/research/research-areas/energy-technologies/business-support/case-studies/proodle/proodle-solutions.aspx"}
+                link={
+                  "https://www.nottingham.ac.uk/research/research-areas/energy-technologies/business-support/case-studies/proodle/proodle-solutions.aspx"
+                }
                 color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
               />
               <Showcase
@@ -119,8 +152,19 @@ class HomeScreen extends Component {
               />
             </div>
           </div>
+          {/* <div className={classes.previousProjectContainer}>
+            <h2 className={classes.subtitle}>Previous Projects</h2>
+            <div className={classes.projects}>
+              <Showcase
+                icon={buggy_icon}
+                text={buggy_project}
+                stack={<BuggyProject classes={classes} />}
+                color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
+              />
+            </div>
+          </div> */}
         </div>
-        <div className={classes.footer} />
+        {/* <div className={classes.footer} /> */}
       </>
     );
   }

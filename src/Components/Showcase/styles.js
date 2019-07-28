@@ -4,7 +4,7 @@ const styles = {
     border: "solid 2px lightgray",
     paddingTop: "20px",
     borderRadius: "5px",
-    width: "33.33%",
+    width: "30%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",

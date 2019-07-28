@@ -7,3 +7,4 @@ of Neural Network architecture, to generate convincing novel content such as Mus
 export const signup_project = `Personal project to speed up startup development of signup/login pages using
 Django and React`;
 
+export const buggy_project = `Undergraduate project designing an Autonomous Buggy using a Computer Vision and Deep Learning`;

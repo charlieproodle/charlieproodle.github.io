@@ -26,16 +26,28 @@ const styles = {
   },
   header: {
     display: "flex",
-    justifyContent: "flex-start",
+    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
-    paddingLeft: "20%"
   },
   detail: {
-    borderBottom: "solid 2px lightgray",
     paddingBottom: "15px",
-    width: "80%",
     display: "flex",
-    alignItems: "center"
+    flex: 1,
+    justifyContent: "flex-start",
+    flexGrow: 1,
+    alignItems: "flex-start"
+  },
+  seperator: {
+    margin: "auto",
+    border: "solid 1px lightgray",
+    width: "20%",
+    animation: "$borderAnimation 3s",
+    animationFillMode: "forwards"
+  },
+  "@keyframes borderAnimation": {
+    from: { width: "20%"},
+    to: { width: "80%"}
   },
   detailText: {
     fontFamily: "Monaco",
@@ -44,7 +56,13 @@ const styles = {
   profilePicture: {
     borderRadius: "50%",
     marginRight: "10px",
-    opacity: "0.75"
+    opacity: "0",
+    animation: "$avatarAnimation 3s",
+    animationFillMode: "forwards"
+  },
+  "@keyframes avatarAnimation": {
+    from : {opacity: 0},
+    to: {opacity: 0.75}
   },
   projectContainer: {
     position: "relative",
@@ -85,10 +103,18 @@ const styles = {
     fontSize: "12px"
   },
   footer: {
+    border: "solid 2px black",
     marginTop: "20%",
     backgroundColor: "lightgray",
     height: "100px"
-  }
+  },
+  previousProjectContainer: {
+  },
+  imgIcon: {
+    marginRight: "5%",
+    height: "30px",
+    width: "30px"
+  },
 };
 
 export default styles;
