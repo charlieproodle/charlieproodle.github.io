@@ -36,7 +36,8 @@ const styles = {
     flex: 1,
     justifyContent: "flex-start",
     flexGrow: 1,
-    alignItems: "flex-start"
+    alignItems: "flex-start",
+    flexDirection: "column",
   },
   seperator: {
     margin: "auto",
@@ -55,10 +56,10 @@ const styles = {
   },
   profilePicture: {
     borderRadius: "50%",
-    marginRight: "10px",
-    opacity: "0",
-    animation: "$avatarAnimation 3s",
-    animationFillMode: "forwards"
+    zIndex: 9,
+    height: 200,
+    width: 200,
+    marginTop: "50%",
   },
   "@keyframes avatarAnimation": {
     from : {opacity: 0},
@@ -75,32 +76,44 @@ const styles = {
   subtitle: {
     textAlign: "center",
     letterSpacing: "2px",
-    marginTop: "25px",
-    fontFamily: "Roboto"
+    margin: "25px 10px",
+    fontFamily: "Roboto",
+    cursor: "pointer",
+    borderRadius: "10px",
+    padding: 20
   },
+  selectedSubtitle: {
+    textAlign: "center",
+    letterSpacing: "2px",
+    margin: "25px 10px",
+    fontFamily: "Roboto",
+    cursor: "pointer",
+    border: "solid 2px black",
+    borderRadius: "10px",
+    padding: 20,
+  },
+
   linkedin: {
     cursor: "pointer"
   },
   linkedinIcon: {
     color: "#4875B4",
     height: "40px",
-    width: "40px"
+    width: "40px",
+  },
+  twitterIcon: {
+    color: "#00acee",
+    height: "40px",
+    width: "40px",
+  },
+  githubIcon: {
+    color: "333",
+    height: "40px",
+    width: "40px",
   },
   devicon: {
     height: "40px",
     width: "40px"
-  },
-  reactIcon: {
-    color: "#61DBFB"
-  },
-  androidIcon: {
-    color: "#A4C639"
-  },
-  jsIcon: {
-    color: "#F0DB4F"
-  },
-  subtext: {
-    fontSize: "12px"
   },
   footer: {
     border: "solid 2px black",
@@ -115,6 +128,16 @@ const styles = {
     height: "30px",
     width: "30px"
   },
+  bannerProfile: {
+    height: 500,
+    position: "absolute",
+    top: -250,
+    opacity: 0.5,
+    right: 0,
+    left: 0,
+    margin: "auto"
+  },
+
 };
 
 export default styles;

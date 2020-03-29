@@ -2,111 +2,43 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles";
 import Showcase from "../../Components/Showcase";
-import {
-  proodle,
-  gan_project,
-  signup_project,
-  buggy_project,
-} from "../../Text/info";
-import { IoLogoLinkedin } from "react-icons/io";
-import {
-  DiReact,
-  DiGithubBadge,
-  DiAndroid,
-  DiJavascript1,
-} from "react-icons/di";
+import { IoLogoLinkedin, IoLogoTwitter, IoLogoGithub } from "react-icons/io";
+import { GiSoapExperiment } from "react-icons/gi";
+import { FaWpforms } from "react-icons/fa";
+import bannerPicture from "../../Images/banner.jpeg";
+import twitterPic from "../../Images/profile_picture.jpg";
 
-import mnist_icon from "../../Images/mnist_2.png";
-import python_icon from "../../Images/python.png";
-import tensorflow_icon from "../../Images/tensorflow.png";
-import keras_icon from "../../Images/keras.png";
-import proodle_icon from "../../Images/proodle.png";
-import redux_icon from "../../Images/redux.png";
-import buggy_icon from "../../Images/buggy.png";
-import rasp_icon from "../../Images/rasp.png";
-import opencv_icon from "../../Images/opencv.png";
+import Article from "../../Components/Article";
 
-const ProodleStack = props => {
-  const { classes } = props;
-  return (
-    <div>
-      <DiReact className={classes.devicon + " " + classes.reactIcon} />
-      <img src={redux_icon} className={classes.devicon} alt={"Not found :("} />
-      <DiGithubBadge className={classes.devicon} />
-      <DiAndroid className={classes.devicon + " " + classes.androidIcon} />
-    </div>
-  );
-};
-
-const ResearchStack = props => {
-  const { classes } = props;
-  return (
-    <div>
-      <img src={python_icon} className={classes.devicon} alt={"Not found :("} />
-      <img
-        src={tensorflow_icon}
-        className={classes.devicon}
-        alt={"Not found :("}
-      />
-      <img src={keras_icon} className={classes.devicon} alt={"Not found :("} />
-    </div>
-  );
-};
-
-const PersonalProject = props => {
-  const { classes } = props;
-  return (
-    <div>
-      <DiReact className={classes.devicon + " " + classes.reactIcon} />
-      <img src={python_icon} className={classes.devicon} alt={"Not found :("} />
-      <DiJavascript1 className={classes.devicon + " " + classes.jsIcon} />
-    </div>
-  );
-};
-
-const BuggyProject = props => {
-  const { classes } = props;
-  return (
-    <div>
-      <img
-        src={rasp_icon}
-        className={classes.devicon + " " + classes.imgIcon}
-        alt={"Not found :("}
-      />
-      <img
-        src={opencv_icon}
-        className={classes.devicon + " " + classes.imgIcon}
-        alt={"Not found :("}
-      />
-    </div>
-  );
-};
+import showcaseData from "../../Data/showcase";
+import articleData from "../../Data/articles";
 
 class HomeScreen extends Component {
+
+  state = {
+    type: "projects"
+  }
+
   render() {
     const { classes } = this.props;
+    const { type } = this.state;
     return (
       <>
+        <img src={bannerPicture} alt={"Not Found"} className={classes.bannerProfile} />
         <div className={classes.mainContainer}>
-          {/* <DiCode className={classes.backgroundIcon2} /> */}
           <div className={classes.header}>
             <div className={classes.detail}>
               <img
-                src={
-                  "https://media.licdn.com/dms/image/C4D03AQG9wDJSmplr8g/profile-displayphoto-shrink_200_200/0?e=1568246400&v=beta&t=NzgTiOqBe9iFk6_EAzVf1e-eFMq8cimt9tgKNl3BIJc"
-                }
+                src={twitterPic}
                 alt={"Not found"}
                 className={classes.profilePicture}
               />
               <div className={classes.detailText}>
                 <p className={classes.name}>Charlie Day</p>
                 <div>
-                  <p className={classes.subtext}>
-                    Postgraduate Computer Science Student
-                  </p>
-                  <p className={classes.subtext}>University of Nottingham</p>
                   <p className={classes.subtext}>charliemday31@gmail.com</p>
                 </div>
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
                 <div
                   className={classes.linkedin}
                   onClick={() =>
@@ -116,55 +48,75 @@ class HomeScreen extends Component {
                 >
                   <IoLogoLinkedin className={classes.linkedinIcon} />
                 </div>
+                <div
+                  className={classes.linkedin}
+                  onClick={() =>
+                    (window.location =
+                      "https://twitter.com/charlie446179")
+                  }
+                >
+                  <IoLogoTwitter className={classes.twitterIcon} />
+                </div>
+                <div
+                  className={classes.linkedin}
+                  onClick={() =>
+                    (window.location =
+                      "https://github.com/charliemday")
+                  }
+                >
+                  <IoLogoGithub className={classes.githubIcon} />
+                </div>
+                </div>
               </div>
             </div>
             <div className={classes.seperator} />
           </div>
           <div className={classes.projectContainer}>
-            <h2 className={classes.subtitle}>Current Projects</h2>
-            <div className={classes.projects}>
-              <Showcase
-                icon={proodle_icon}
-                text={proodle}
-                stack={<ProodleStack classes={classes} />}
-                link={
-                  "https://www.nottingham.ac.uk/research/research-areas/energy-technologies/business-support/case-studies/proodle/proodle-solutions.aspx"
-                }
-                color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
-              />
-              <Showcase
-                icon={mnist_icon}
-                text={gan_project}
-                stack={<ResearchStack classes={classes} />}
-                link={
-                  "https://github.com/charlieproodle/General-Adversarial-Networks"
-                }
-                color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
-              />
-              <Showcase
-                icon={
-                  "https://github.com/charlieproodle/signup/blob/master/Images/Screenshot%202019-07-10%20at%2002.02.38.png?raw=true"
-                }
-                stack={<PersonalProject classes={classes} />}
-                text={signup_project}
-                link={"https://github.com/charlieproodle/signup"}
-                color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
-              />
+            <div style={{ display: "flex", justifyContent: "center"}}>
+            <h2 className={
+              type === "projects" ? 
+                classes.selectedSubtitle : 
+                  classes.subtitle} onClick={() => this.setState({ 
+              type: "projects"
+            })}>Projects <GiSoapExperiment/></h2>
+            <h2 
+              className={type === "articles" ? classes.selectedSubtitle : classes.subtitle}
+              onClick={() => this.setState({ type: "articles" })}
+              >Articles <FaWpforms /></h2>
             </div>
+            <div className={classes.projects}>
+              { this.state.type === "projects" &&
+                showcaseData.map(
+                ({ icon, text, stack, link }) => {
+                  const StackComp = stack;
+                  return (
+                    <Showcase 
+                      icon={icon}
+                      text={text}
+                      stack={<StackComp />}
+                      link={link}
+                      color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
+                    />
+                  )
+                }
+                )
+              }
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: "center", marginBottom: 100 }}>
+              {
+                this.state.type === "articles" &&
+
+                articleData.map(
+                  ({ name, link, icon }) => {
+                    return (
+                      <Article name={name} link={link} icon={icon}/>
+                    )
+                  }
+                )
+              }
+              </div>
           </div>
-          {/* <div className={classes.previousProjectContainer}>
-            <h2 className={classes.subtitle}>Previous Projects</h2>
-            <div className={classes.projects}>
-              <Showcase
-                icon={buggy_icon}
-                text={buggy_project}
-                stack={<BuggyProject classes={classes} />}
-                color={`#${Math.floor(Math.random() * 16777215).toString(16)}`}
-              />
-            </div>
-          </div> */}
         </div>
-        {/* <div className={classes.footer} /> */}
       </>
     );
   }
