@@ -1,15 +1,20 @@
 {
-  "homepage": "http://charlieproodle.github.io",
-  "name": "charlieproodle.github.io",
+  "homepage": "http://charliemday.github.io",
+  "name": "charliemday.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/styles": "^4.2.0",
     "gh-pages": "^2.0.1",
+    "node-sass": "^4.13.1",
+    "prettier": "^2.0.4",
     "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-spring": "^8.0.27",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

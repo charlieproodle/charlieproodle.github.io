@@ -1,0 +1,60 @@
+.container {
+    border: solid 2px lightgray;
+    width: 25%;
+    margin: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 27px;
+}
+
+.iconContainer {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+.icon {
+    width: 100px;
+}
+
+.text {
+    flex: 1;
+    padding: 20px;
+    line-height: 25px;
+}
+
+.button {
+    cursor: pointer;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    margin-top: 10px;
+} 
+
+.button:hover {
+    background-color: lightgray;
+}
+
+.stackImage {
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.stackContainer {
+    display: flex;
+    justify-content: center;
+}
