@@ -74,11 +74,11 @@ class HomeScreen extends Component {
     return (
       <>
       <Spinner animation="border" />
-        <img
+        {/* <img
           src={bannerPicture}
           alt={"Not Found"}
           className={classes.bannerProfile}
-        />
+        /> */}
         <div className={classes.mainContainer}>
           <div className={classes.header}>
             <div className={classes.detail}>
