@@ -2,11 +2,15 @@
 	height: 100vh;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .name {
 	font-size: 32px;
+}
+
+.detailText {
+	margin-top: 20%;
 }
 
 .icon {
@@ -112,4 +116,20 @@
 }
 .cn-slide nav a:nth-child(4){
 	transition-delay: 0.9s, 0.9s,0s;
+}
+
+.projectsContainer {
+	display: flex;
+	padding-top: 20px;
+	margin-top: 20px;
+	border-top: solid 1px lightgrey;
+}
+
+.project {
+	margin: 20px;
+}
+
+.link:active a:visited, link:focus {
+	color: red;
+	text-decoration: none;
 }

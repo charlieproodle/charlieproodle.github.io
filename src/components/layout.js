@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import "./layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, darkMode }) => {
   return (
     <>
       <div

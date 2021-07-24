@@ -1,7 +1,10 @@
 import React from "react";
 import Particles from "react-tsparticles";
 
-const CustomParticles = () => {
+const colourA = "#ffffff";
+const colourB = "#000000";
+
+const CustomParticles = ({ darkMode }) => {
   return (
     <Particles
       id="tsparticles"
@@ -16,7 +19,7 @@ const CustomParticles = () => {
       options={{
         background: {
           color: {
-            value: "#ffffff",
+            value: darkMode ? colourB : colourA,
           },
         },
         fpsLimit: 60,
@@ -51,10 +54,10 @@ const CustomParticles = () => {
         },
         particles: {
           color: {
-            value: "#000000", // Red
+            value: darkMode ? colourA : colourB, // Red
           },
           links: {
-            color: "#000000",
+            color: darkMode ? colourA : colourB,
             distance: 150,
             enable: true,
             opacity: 0.25,
