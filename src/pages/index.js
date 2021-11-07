@@ -6,10 +6,13 @@ import Particles from "../components/Particles"
 import classes from "./styles.module.css"
 import { IoLogoLinkedin, IoLogoTwitter, IoLogoGithub } from "react-icons/io"
 import { BsMoon } from "react-icons/bs"
+import { Helmet } from 'react-helmet';
 
 const IndexPage = () => {
   const [darkMode, setDarkMode] = useState(false)
   return (
+    <>
+    <Helmet><title>Charlie Day</title></Helmet>
     <Layout darkMode={darkMode}>
       <Particles darkMode={darkMode} />
       <div className={classes.container}>
@@ -117,6 +120,7 @@ const IndexPage = () => {
         </div>
       </div>
     </Layout>
+    </>
   )
 }
 
