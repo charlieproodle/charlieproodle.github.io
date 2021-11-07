@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{RmlY:function(e,n,t){"use strict";t.r(n);var i=t("q1tI"),a=t.n(i),o={container:{border:"solid 2px black",height:"100vh",display:"flex",justifyContent:"center",alignItems:"flex-start",paddingTop:"10%"}};n.default=function(){return a.a.createElement("div",{style:o.container},"Hi, I'm Charlie, a software engineer based in London,UK")}}}]);
+//# sourceMappingURL=component---src-pages-blog-about-me-tsx-667393e67853d584e0ad.js.map
